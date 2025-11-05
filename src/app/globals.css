@@ -1,8 +1,10 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* --background: #ffffff;
+  --foreground: #171717; */
+
+  --utama-kali-ya: #b55048;
 }
 
 @theme inline {
@@ -10,13 +12,26 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --color-utama-kali-ya: var(--utama-kali-ya);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* --background: #0a0a0a;
+    --foreground: #ededed; */
   }
+}
+
+@utility button-form {
+  @apply w-1/5 border-transparent font-medium text-white bg-utama-kali-ya cursor-pointer;
+}
+
+@utility input-form {
+  @apply min-w-lg px-4 py-2 text-[#66666699] font-normal border rounded-xl border-[#66666659] focus:outline-none focus:ring-1 focus:ring-[#666666];
+}
+
+@utility label-form {
+  @apply block mb-2 text-[#666666];
 }
 
 body {
