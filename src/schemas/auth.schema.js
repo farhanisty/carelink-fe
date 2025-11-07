@@ -2,9 +2,9 @@ import * as yup from "yup";
 
 /* ✅ Validasi Login */
 export const VLoginSchema = yup.object().shape({
-  username: yup
+  email: yup
     .string()
-    .required("Username wajib diisi")
+    .required("Email wajib diisi")
     .max(50, "Maksimal 50 karakter"),
   password: yup
     .string()
@@ -15,18 +15,18 @@ export const VLoginSchema = yup.object().shape({
 /* ✅ Validasi Signup */
 export const VSignupSchema = yup.object().shape({
   name: yup.string().required("Nama wajib diisi"),
-  email: yup
-    .string()
-    .required("Email wajib diisi")
-    .email("Email harus valid"),
+  email: yup.string().required("Email wajib diisi").email("Email harus valid"),
   password: yup
     .string()
     .required("Password wajib diisi")
     .min(8, "Password minimal 8 karakter"),
+  phone: yup.string().required("Nomor telepon wajib diisi"),
   terms: yup
+    .boolean()
+    .oneOf([true], "Anda harus menyetujui Terms and Privacy Policy"),
+  marketing: yup
     .bool()
-    .oneOf([true], "Anda harus menyetujui Terms & Privacy Policy"),
-  marketing: yup.bool().optional(),
+    .oneOf([true], "Anda harus menyetujui pengiriman marketing"),
 });
 
 /* ✅ Validasi Update Admin */
@@ -37,8 +37,7 @@ export const VUpdateAdminSchema = yup.object().shape(
     username: yup.string().required("Username wajib diisi"),
     password: yup.string().when("password", {
       is: (value) => value && value.trim() !== "",
-      then: (schema) =>
-        schema.min(8, "Password minimal 8 karakter"),
+      then: (schema) => schema.min(8, "Password minimal 8 karakter"),
       otherwise: (schema) => schema.optional(),
     }),
   },
