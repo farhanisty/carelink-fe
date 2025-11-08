@@ -1,0 +1,120 @@
+.footer {
+    background-color: #fff;
+    padding: 60px 5% 40px;
+    position: relative;
+    overflow: hidden;
+    /* border-top: 1px solid #f0f0f0; */
+}
+
+/* Lingkaran Kuning  */
+.decoration {
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 300px;
+    height: 300px;
+    background-color: var(--color-secondary, #FDB750); 
+    border-radius: 50%;
+    z-index: 0;
+    opacity: 0.6; 
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1280px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1; 
+}
+
+.leftSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 150px; 
+}
+
+.logoText {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary, #5F7D54); 
+}
+
+.highlightRed {
+    color: var(--color-accent-red, #AB4E40); 
+}
+
+.copyright {
+    font-size: 0.875rem;
+    color: var(--color-text-gray, #666);
+    margin-top: auto; 
+}
+
+.rightSection {
+    text-align: right;
+    max-width: 500px;
+}
+
+.taglineTitle {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--color-text-dark, #1A1A1A);
+    margin-bottom: 10px;
+}
+
+.taglineDesc {
+    color: var(--color-text-dark, #1A1A1A);
+    line-height: 1.5;
+    margin-bottom: 40px;
+    font-size: 1rem;
+}
+
+.socialMedia {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end; /* Ikon rata kanan */
+}
+
+.socialIcon {
+    color: var(--color-text-dark);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.socialIcon img {
+    width: 24px;
+    height: 24px;
+}
+
+
+.socialIcon img:hover {
+  transform: scale(1.4);
+    transition: transform 0.3s ease;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        gap: 40px;
+    }
+    .leftSection {
+        min-height: auto;
+        gap: 20px;
+    }
+    .rightSection {
+        text-align: left; 
+    }
+    .socialMedia {
+        justify-content: flex-start; 
+    }
+    .decoration {
+        width: 200px;
+        height: 200px;
+        bottom: -50px;
+        left: -50px;
+    }
+}

@@ -21,9 +21,9 @@ const Navbar = () => {
 
         <ul className={styles.navLinks}>
           <li><Link href="/" className={styles.activeLink}>Home</Link></li>
-          <li><Link href="/tentang-kami">Tentang Kami</Link></li>
-          <li><Link href="/booking">Booking</Link></li>
-          <li><Link href="/testimonial">Testimonial</Link></li>
+          <li><Link href="/#about">Tentang Kami</Link></li>
+          <li><Link href="/#cta">Booking</Link></li>
+          <li><Link href="/#testimonial">Testimonial</Link></li>
           <li><Link href="/faq">FAQ</Link></li>
         </ul>
 

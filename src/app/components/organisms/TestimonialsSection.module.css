@@ -1,0 +1,133 @@
+.section {
+    padding: 150px 5%;
+    background-color: #fff;
+    position: relative;
+    overflow: hidden; 
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin-bottom: 60px;
+}
+
+.titleWrapper {
+    position: relative;
+    z-index: 2;
+}
+
+.title {
+    font-size: 2.5rem;
+    color: var(--color-accent-red);
+    font-weight: 800;
+}
+
+.titleDeco {
+    position: absolute;
+    top: -10px;
+    left: -20px;
+    width: 60px;
+    height: 60px;
+    background-color: #FFE4C4;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+.description {
+    color: var(--color-primary);
+    font-weight: 500;
+    max-width: 500px;
+    line-height: 1.5;
+}
+
+.sliderContainer {
+    background-color: #F5EBEB; 
+    border-radius: 40px;
+    padding: 60px 5% 80px; 
+    position: relative;
+}
+
+.cardsScrollWrapper {
+    display: flex;
+    gap: 40px;
+    overflow-x: auto; 
+    padding: 20px 0; 
+    scroll-snap-type: x mandatory; 
+    
+    /* Sembunyikan scrollbar supaya rapi */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+.cardsScrollWrapper::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 600px;
+    margin: 40px auto 0;
+    padding: 0 20px;
+}
+
+.navArrow {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #E0E0E0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent; 
+}
+
+.arrowRight img {
+    transform: rotate(180deg);
+}
+
+.navArrow:hover {
+    border-color: var(--color-accent-red);
+    background-color: white;
+}
+
+.dots {
+    display: flex;
+    gap: 10px;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-text-dark);
+    opacity: 0.2;
+    border-radius: 50%; 
+}
+
+.dot.active {
+    background-color: var(--color-accent-red);
+    opacity: 1;
+    /* Bentuk bintang/unik di desain bisa pakai clip-path atau SVG nanti, sementara bulat/kotak dulu */
+    border-radius: 2px; 
+    transform: rotate(45deg); /* diamond */
+}
+
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+    .sliderContainer {
+        padding: 40px 20px;
+        border-radius: 20px;
+    }
+    .cardsScrollWrapper {
+        gap: 20px;
+    }
+}
