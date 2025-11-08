@@ -1,0 +1,75 @@
+.navbar {
+  background-color: var( --color-white); 
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); 
+  position: sticky; 
+  top: 0;
+  z-index: 1; 
+  width: 100%;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 5%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.highlight {
+  color: var(--color-accent-red); 
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2rem; 
+  margin: 0;
+  padding: 0;
+}
+
+.navLinks li a {
+  text-decoration: none;
+  color: var(--color-primary);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s ease;
+}
+
+.navLinks li a:hover,
+.activeLink {
+  color: var(--color-primary); 
+}
+
+.navActions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.loginLink {
+  text-decoration: none;
+  color: var(--color-text-dark);
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.loginLink:hover {
+  color: var(--color-primary);
+}
+
+@media (max-width: 768px) {
+  .navLinks, .navActions {
+    display: none; 
+  }
+  
+  .container {
+    padding: 1rem;
+  }
+  
+  /* hamburger menu */
+}
